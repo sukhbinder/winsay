@@ -1,5 +1,6 @@
 # winsay
 Say command in windows
+
 ![](img/youtube.png)
 
 
@@ -9,4 +10,5 @@ pip install winsay
 
 # Demo
 
-!(https://youtu.be/dZaV5MtG3n4)[https://youtu.be/dZaV5MtG3n4}
+
+[![Check a demo](img/youtube.png)](https://youtu.be/dZaV5MtG3n4)
