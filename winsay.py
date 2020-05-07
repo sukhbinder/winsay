@@ -4,6 +4,7 @@ import argparse
 import datetime
 import time
 
+
 import win32com.client as wincl
 
 
@@ -12,7 +13,7 @@ def say(text):
         speaker = wincl.Dispatch("SAPI.SpVoice")
         speaker.Speak(text)
     except Exception as ex:
-        print("Error in speaking: ".format(ex.msg))
+        print("Error in speaking: {} with this error{} ".format(text, ex))
 
 
 def main():
