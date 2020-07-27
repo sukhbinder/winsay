@@ -9,7 +9,7 @@ setup(
     author="sukhbinder",
     author_email="sukh2010@yahoo.com",
     entry_points={
-        'console_scripts': ['say = winsay:main', ],
+        'console_scripts': ['say = winsay.winsay:main', ],
     },
     install_requires=["pywin32"],
 
