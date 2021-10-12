@@ -7,10 +7,10 @@ import time
 
 import win32com.client as wincl
 
+speaker = wincl.Dispatch("SAPI.SpVoice")
 
 def say(text):
     try:
-        speaker = wincl.Dispatch("SAPI.SpVoice")
         speaker.Speak(text)
     except Exception as ex:
         print("Error in speaking: {} with this error{} ".format(text, ex))
