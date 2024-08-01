@@ -1,10 +1,6 @@
 from __future__ import print_function
 
 import argparse
-import datetime
-import time
-
-
 import win32com.client as wincl
 
 speaker = wincl.Dispatch("SAPI.SpVoice")
@@ -20,11 +16,7 @@ def main():
     """
     Say in windows
     """
-    parser = argparse.ArgumentParser(description="Say in windows")
-    parser.add_argument("text", type=str, nargs="*",
-                        help="sentence to speak", default="")
-    parser.add_argument("-i", "--input", type=str,
-                        help="Text File to speak", default=None)
+    parser = create_parser()
 
     args = parser.parse_args()
     if args.input:
@@ -34,6 +26,15 @@ def main():
     if args.text:
         sentence = " ".join(args.text)
         say(sentence)
+
+def create_parser():
+    parser = argparse.ArgumentParser(description="Say in windows")
+    parser.add_argument("text", type=str, nargs="*",
+                        help="sentence to speak", default="")
+    parser.add_argument("-i", "--input", type=str,
+                        help="Text File to speak", default=None)
+                        
+    return parser
 
 
 if __name__ == "__main__":

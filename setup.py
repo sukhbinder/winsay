@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="winsay",
-    version="1.1",
+    version="1.1.1",
     packages=find_packages(),
     license="Private",
     description="say in windows",
@@ -29,5 +29,9 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
     ],
+    extras_require={
+        "test": [
+            "pytest",]
+    },
 
 )
