@@ -19,6 +19,12 @@ def main():
     parser = create_parser()
 
     args = parser.parse_args()
+    volume = args.volume
+    if volume < 0:
+        volume = 0
+    if volume > 100:
+        volume = 100
+    speaker.Volume = volume
     if args.input:
         content = open(args.input).read()
         say(content)
@@ -33,7 +39,9 @@ def create_parser():
                         help="sentence to speak", default="")
     parser.add_argument("-i", "--input", type=str,
                         help="Text File to speak", default=None)
-                        
+    parser.add_argument("-v", "--volume", type=int, default=100,
+                        help="Volume (0-100)")
+
     return parser
 
 
